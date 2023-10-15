@@ -3,7 +3,7 @@
 <head>
   <style>
     body {
-      background-size: 50%;
+      background-size: 150%;
       background-repeat: no-repeat;
       background-position: center;
     }
@@ -11,6 +11,7 @@
       text-align: center;
       margin-top: 50px;
       color: black; /* Yazı rengini siyah yap */
+      display: none;
     }
     .roletitle {
       font-weight: bold;
@@ -30,9 +31,39 @@
     .status:hover {
       background-color: lightgray;
     }
+    .form {
+      display: block;
+      text-align: center;
+    }
+    .input-field {
+      margin-bottom: 10px;
+    }
+    .logo {
+      display: block;
+      text-align: center;
+    }
   </style>
 </head>
 <body>
+  <div class="logo" id="logo">
+    <img src="logo.png" alt="Logo" style="width:300px;height:300px;">
+    <h1 style="font-size: 36px; font-weight: bold;">SDÜ ELHAB 2024 BİTİRME ÖDEVİ</h1>
+  </div>
+
+  <div class="form-container" id="form-container" style="text-align:center;">
+    <form class="form">
+      <div class="input-field">
+        <div>Kullanıcı Adı:</div>
+        <input type="text" id="username">
+      </div>
+      <div class="input-field">
+        <div>Şifre:</div>
+        <input type="password" id="password">
+      </div>
+      <input type="button" value="Giriş" onclick="checkCredentials()">
+    </form>
+  </div>
+
   <div class="role-container" id="role-container">
     <div class="roletitle">RÖLE KONTROL</div>
     <div class="roleicons">
@@ -50,7 +81,7 @@
           <div class="status" onclick="alert('Kapalı')">Kapalı</div>
         </div>
       </div>
-      <div class "role">
+      <div class="role">
         Röle 3<br>
         <div class="status-container">
           <div class="status" onclick="alert('Açık')">Açık</div>
@@ -66,5 +97,23 @@
       </div>
     </div>
   </div>
+
+  <script>
+    function checkCredentials() {
+      var username = document.getElementById('username').value;
+      var password = document.getElementById('password').value;
+      var formContainer = document.getElementById('form-container');
+      var roleContainer = document.getElementById('role-container');
+      var logo = document.getElementById('logo');
+
+      if (username === 'huseyineyupcan' && password === '41') {
+        formContainer.style.display = 'none';
+        logo.style.display = 'none';
+        roleContainer.style.display = 'block';
+      } else {
+        alert('Yanlış kullanıcı adı veya şifre!');
+      }
+    }
+  </script>
 </body>
 </html>
