@@ -1,49 +1,70 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Arduino Web Kontrol</title>
-    <style>
-        body {
-            background-color: #f0f0f0;
-            text-align: center;
-            padding-top: 100px;
-            font-family: Arial, sans-serif;
-        }
-        h1 {
-            font-size: 36px;
-        }
-        p {
-            font-size: 18px;
-        }
-        .icon {
-            display: inline-block;
-            border: 1px solid #000;
-            padding: 10px;
-            margin: 10px;
-        }
-    </style>
+  <style>
+    body {
+      background-size: 50%;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    .role-container {
+      text-align: center;
+      margin-top: 50px;
+      color: black; /* Yazı rengini siyah yap */
+    }
+    .roletitle {
+      font-weight: bold;
+      font-size: 24px;
+    }
+    .role {
+      margin: 20px;
+      font-weight: bold;
+    }
+    .status {
+      display: inline-block;
+      padding: 10px 20px;
+      border: 1px solid black;
+      margin: 5px;
+      cursor: pointer;
+    }
+    .status:hover {
+      background-color: lightgray;
+    }
+  </style>
 </head>
 <body>
-    <h1>Arduino Kontrol Paneli</h1>
-    <div class="icon">
-        <h2>Röle 1</h2>
-        <p>Açık</p>
-        <p>Kapalı</p>
+  <div class="role-container" id="role-container">
+    <div class="roletitle">RÖLE KONTROL</div>
+    <div class="roleicons">
+      <div class="role">
+        Röle 1<br>
+        <div class="status-container">
+          <div class="status" onclick="alert('Açık')">Açık</div>
+          <div class="status" onclick="alert('Kapalı')">Kapalı</div>
+        </div>
+      </div>
+      <div class="role">
+        Röle 2<br>
+        <div class="status-container">
+          <div class="status" onclick="alert('Açık')">Açık</div>
+          <div class="status" onclick="alert('Kapalı')">Kapalı</div>
+        </div>
+      </div>
+      <div class "role">
+        Röle 3<br>
+        <div class="status-container">
+          <div class="status" onclick="alert('Açık')">Açık</div>
+          <div class="status" onclick="alert('Kapalı')">Kapalı</div>
+        </div>
+      </div>
+      <div class="role">
+        Röle 4<br>
+        <div class="status-container">
+          <div class="status" onclick="alert('Açık')">Açık</div>
+          <div class="status" onclick="alert('Kapalı')">Kapalı</div>
+        </div>
+      </div>
     </div>
-    <div class="icon">
-        <h2>Röle 2</h2>
-        <p>Açık</p>
-        <p>Kapalı</p>
-    </div>
-    <div class="icon">
-        <h2>Röle 3</h2>
-        <p>Açık</p>
-        <p>Kapalı</p>
-    </div>
-    <div class="icon">
-        <h2>Röle 4</h2>
-        <p>Açık</p>
-        <p>Kapalı</p>
-    </div>
+  </div>
 </body>
 </html>
