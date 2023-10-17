@@ -34,37 +34,28 @@
 </head>
 <body>
   <div class="role-container" id="role-container">
-    <div class="roletitle">RÖLE KONTROL</div>
+    <div class="roletitle">RÖLE 1</div>
     <div class="roleicons">
       <div class="role">
-        Röle 1<br>
         <div class="status-container">
-          <div class="status" onclick="alert('Açık')">Açık</div>
-          <div class="status" onclick="alert('Kapalı')">Kapalı</div>
-        </div>
-      </div>
-      <div class="role">
-        Röle 2<br>
-        <div class="status-container">
-          <div class="status" onclick="alert('Açık')">Açık</div>
-          <div class="status" onclick="alert('Kapalı')">Kapalı</div>
-        </div>
-      </div>
-      <div class="role">
-        Röle 3<br>
-        <div class="status-container">
-          <div class="status" onclick="alert('Açık')">Açık</div>
-          <div class="status" onclick="alert('Kapalı')">Kapalı</div>
-        </div>
-      </div>
-      <div class="role">
-        Röle 4<br>
-        <div class="status-container">
-          <div class="status" onclick="alert('Açık')">Açık</div>
-          <div class="status" onclick="alert('Kapalı')">Kapalı</div>
+          <div class="status" onclick="relayControl('Açık')">Açık</div>
+          <div class="status" onclick="relayControl('Kapalı')">Kapalı</div>
         </div>
       </div>
     </div>
   </div>
+
+  <script>
+    function relayControl(state) {
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          console.log(this.responseText);
+        }
+      };
+      xhttp.open("GET", "/state?relay1=" + state, true);
+      xhttp.send();
+    }
+  </script>
 </body>
 </html>
