@@ -2,46 +2,7 @@
 <html>
 <head>
   <style>
-    body {
-      background-size: 150%;
-      background-repeat: no-repeat;
-      background-position: center;
-    }
-    .role-container {
-      text-align: center;
-      margin-top: 50px;
-      color: black; /* Yazı rengini siyah yap */
-      display: none;
-    }
-    .roletitle {
-      font-weight: bold;
-      font-size: 24px;
-    }
-    .role {
-      margin: 20px;
-      font-weight: bold;
-    }
-    .status {
-      display: inline-block;
-      padding: 10px 20px;
-      border: 1px solid black;
-      margin: 5px;
-      cursor: pointer;
-    }
-    .status:hover {
-      background-color: lightgray;
-    }
-    .form {
-      display: block;
-      text-align: center;
-    }
-    .input-field {
-      margin-bottom: 10px;
-    }
-    .logo {
-      display: block;
-      text-align: center;
-    }
+    /* Stil bilgileri buraya gelecek */
   </style>
 </head>
 <body>
@@ -70,49 +31,29 @@
       <div class="role">
         Röle 1<br>
         <div class="status-container">
-          <div class="status" onclick="alert('Açık')">Açık</div>
-          <div class="status" onclick="alert('Kapalı')">Kapalı</div>
+          <div class="status" onclick="changeRelayStatus('Açık')">Açık</div>
+          <div class="status" onclick="changeRelayStatus('Kapalı')">Kapalı</div>
         </div>
       </div>
-      <div class="role">
-        Röle 2<br>
-        <div class="status-container">
-          <div class="status" onclick="alert('Açık')">Açık</div>
-          <div class="status" onclick="alert('Kapalı')">Kapalı</div>
-        </div>
-      </div>
-      <div class="role">
-        Röle 3<br>
-        <div class="status-container">
-          <div class="status" onclick="alert('Açık')">Açık</div>
-          <div class="status" onclick="alert('Kapalı')">Kapalı</div>
-        </div>
-      </div>
-      <div class="role">
-        Röle 4<br>
-        <div class="status-container">
-          <div class="status" onclick="alert('Açık')">Açık</div>
-          <div class="status" onclick="alert('Kapalı')">Kapalı</div>
-        </div>
-      </div>
+      <!-- Diğer röleler buraya gelecek -->
     </div>
   </div>
 
   <script>
     function checkCredentials() {
-      var username = document.getElementById('username').value;
-      var password = document.getElementById('password').value;
-      var formContainer = document.getElementById('form-container');
-      var roleContainer = document.getElementById('role-container');
-      var logo = document.getElementById('logo');
+      // Kullanıcı adı ve şifre kontrolü burada yapılacak
+    }
 
-      if (username === 'huseyineyupcan' && password === '41') {
-        formContainer.style.display = 'none';
-        logo.style.display = 'none';
-        roleContainer.style.display = 'block';
-      } else {
-        alert('Yanlış kullanıcı adı veya şifre!');
+    function changeRelayStatus(status) {
+      if (status === 'Açık') {
+        sendDataToNodemcu('Açık');
+      } else if (status === 'Kapalı') {
+        sendDataToNodemcu('Kapalı');
       }
+    }
+
+    function sendDataToNodemcu(status) {
+      // Nodemcu'ya veri gönderme işlemi burada yapılacak
     }
   </script>
 </body>
